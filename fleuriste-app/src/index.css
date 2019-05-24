@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #fc9c6b;
+    font-size: 20px;
+}
+
+.fa-heart{
+    color: rgb(214, 0, 0);
+}
+.fa-sun {
+    color: gold;
+}
+
+.fa-gem{
+    color:skyblue;
+}
+
+.fa-handshake{
+    color: #3a5f3a;
+}
+
+.fa-gift{
+    color: rgb(224, 31, 105);
+}
+
+.fa-cross{
+    color: #642b08;
+}
+
+
+/***********  DROPDOWN **************/
+
+.dropdown {
+    font-size: 20px;
+  float: left;
+  position: relative;
+  }
+
+  .dropbtn{
+    margin: 2px 10px;
+    color: black;
+  }
+
+.dropbtn:hover {
+    color: #fc9c6b;
+    padding: 2px 8px;
+    margin: 0;
+    border: 2px solid #fc9c6b;
+}
+
+  .dropdownContent {
+    display: none;
+    position: absolute;
+    top: 25px;
+    background-color: #fc9c6b;
+
+    min-width: 500%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 5px 15px;
+    width: 100%;
+  }
+  
+  .dropdownContent a {
+    display: block;
+    padding: 8px 5px;
+    color: black;
+    width: 100%;
+  }
+  
+  .dropdownContent a:hover {
+    color: white;
+
+  }
+  
+  .dropdown:hover .dropdownContent {
+    display: block;
+  }
+
+  /****************************************************************************/

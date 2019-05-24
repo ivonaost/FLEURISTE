@@ -1,0 +1,41 @@
+.Container{
+    width: 100%;
+}
+
+.MainPhoto{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.MainPhoto img{
+    width: 100%;
+    position: fixed;
+    top: -150px;
+    z-index: -2;
+}
+
+.PageTitle {
+    text-transform: uppercase;
+    margin: 110px 0;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.438);
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-weight: normal;
+}
+
+.Main{
+    background-color: white;
+    padding: 40px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.PhotoColumn {
+    flex: 30%;
+    padding: 0 4px;
+  }

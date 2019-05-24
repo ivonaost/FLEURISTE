@@ -1,0 +1,109 @@
+
+.Container{
+    width: 100%;
+}
+
+.MainPhoto{
+    width: 100%;
+    /* display: flex;
+    justify-content: center; */
+}
+
+.MainPhoto img{
+    width: 100%;
+    position: fixed;
+    top: -60px;
+    z-index: -1;
+}
+
+.cardForm {
+    text-transform: uppercase;
+    margin: 100px 0;
+    color: black;
+    background-color: rgba(255, 192, 203, 0.616);
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    
+}
+.cardForm h4{
+    margin: 0;
+}
+
+.cardForm select{
+        width: 20%;
+        margin: 40px;
+    }
+
+.OptionsForm {
+    display: none;
+}
+
+.inputCounterSpan{
+    display: none;
+}
+
+.inputCounterSpan input{
+    background-color: rgb(255, 192, 203);
+    border: none;
+    font-weight: bold;
+    font-size:16px;
+    padding: 2px 4px;
+    width: 50px;
+}
+
+.OptionsList{
+    text-align: left;
+    margin: auto;
+    width: 20%;
+}
+
+.OptionsList div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+}
+
+.OptionsList div b{
+    font-weight: normal;
+}
+
+.ShopNowBtn{
+    margin: 40px 0;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 15px 50px;
+    /* border-radius: 5px; */
+    transition: transform .2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ShopNowBtn:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    border: 2px solid #fc9c6b;
+    color: #fc9c6b;
+    padding: 13px 48px;
+}
+
+.oneFlowerCount{
+    margin: 20px auto 0 auto;
+    width: 20%;
+}
+
+.oneFlowerCount input{
+    background-color: rgb(255, 192, 203);
+    border: none;
+    font-weight: bold;
+    font-size:16px;
+    padding: 2px 4px;
+    width: 100px;
+}
+
+.Price{
+    margin: 12px auto;
+}

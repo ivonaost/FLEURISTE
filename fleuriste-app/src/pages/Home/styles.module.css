@@ -1,0 +1,116 @@
+.MainPhoto{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.MainPhoto img{
+    width: 100%;
+    position: fixed;
+    top: -90px;
+    z-index: -2;
+}
+
+.ShopNowBtn{
+    margin: 160px 0 80px 0;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 15px 50px;
+    /* border-radius: 5px; */
+    transition: transform .2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ShopNowBtn:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    border: 2px solid #fc9c6b;
+    color: #fc9c6b;
+    padding: 13px 48px;
+}
+
+.Main{
+    width: 100%;
+    background-color: #fc9c6b;
+}
+
+.MainDiv{
+    padding: 30px 0; 
+    margin: auto;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    flex-wrap: wrap;
+}
+
+.Main i{
+    background-color: white;
+    font-size: 70px;
+    padding: 20px;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px auto;
+    transition: transform .2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.MainDiv div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 5px;    
+}
+
+
+.Main i:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+    color: #fc9c6b;
+}
+
+.MainBlock{
+    margin-top: 200px;
+    background-color: white;
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+.MainBlock .MinnieBlock{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    margin: auto;
+}
+
+.MainBlock img{
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.MinnieBlock div{    
+    position: relative;
+}
+
+.MainBlock button{
+    position: absolute;
+    z-index: 5;
+    margin:0;
+    top:45%;
+    left: 30%;
+    width: 40%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

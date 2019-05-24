@@ -1,0 +1,35 @@
+.Footer{
+    background-color: #fc9c6b; 
+}
+
+.Info{    
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.Info p {
+    font-size: 15px;
+}
+
+.Info div{
+    width: 26%;
+}
+
+.Footer>p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Creators {
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    background-color: #d67e52;
+    margin: 0;
+    padding: 20px 0;
+
+}

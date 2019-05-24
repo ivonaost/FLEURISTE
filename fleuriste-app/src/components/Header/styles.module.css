@@ -1,0 +1,39 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+}
+
+.headerLogo img{
+    width: 250px;
+    padding-left: 10px;
+    transition: transform .2s;
+}
+
+.headerLogo img:hover{
+    transform: scale(1.1);
+}
+
+.headerNav {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.HeaderLink{
+    text-decoration-line: none;
+    font-size: 20px;
+    margin: 2px 10px;
+    color: black;
+}
+
+.HeaderLink:hover {
+    color: #fc9c6b;
+    padding: 2px 8px;
+    margin: 0;
+    border: 2px solid #fc9c6b;
+    
+}
+
