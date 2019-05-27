@@ -35,12 +35,7 @@ class Detail extends Component {
           Aliquam erat volutpat. Aliquam eu placerat nisl. Curabitur pretium vitae neque in faucibus. Duis ornare in lacus in accumsan.
             In sodales, quam ac blandit ultrices, sapien tellus ultricies nunc, at lobortis nisl ligula eget turpis</div>
           <div className={styles.Size}>
-            <select>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-            </select>
+            <div>Cijena: 100kn</div>
             <button className={styles.AddBtn}>Dodaj u košaricu</button>
           </div>
 

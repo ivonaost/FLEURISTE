@@ -33,6 +33,18 @@ class Main extends Component {
     }
   }
 
+  componentDidMount() {
+    // fetch('/api/customers')
+    //     .then(res => res.json())
+    //     .then(customers => this.setState({ customers }, () => console.log('Customers fetched...', customers)));
+
+    fetch('/api/bouquets')
+      .then(res => res.json())
+      .then(bouquets => this.setState({ bouquets }, () => {
+        console.log('Successfull fetched...', bouquets)
+      }));
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.match.params.id !== this.props.match.params.id) {
       const currentPage = nextProps.match.params.id
