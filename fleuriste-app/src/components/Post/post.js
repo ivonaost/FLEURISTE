@@ -16,7 +16,7 @@ class Post extends Component {
 
                 </div>
                 <div className={styles.Price}>
-                    <p>{this.props.flower}</p>
+                    <p>{this.props.flower} BUKET</p>
                     <p>{this.props.price} kn</p>
                 </div>
             </div>);

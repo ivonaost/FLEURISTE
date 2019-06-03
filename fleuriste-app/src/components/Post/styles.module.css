@@ -17,6 +17,7 @@
 
 .Price p{
     margin: 0;
+    text-transform: uppercase;
 }
 
 .container {
