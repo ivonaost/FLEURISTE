@@ -47,7 +47,7 @@ app.get('/api/flowers', (req, res) => {
 });
 
 app.get('/api/bouquets', (req, res) => {
-  let sql = 'SELECT * FROM bouquet';
+  let sql = 'SELECT * FROM bouquet ORDER BY idbouquet DESC';
   let query = db.query(sql, (err, bouquet) => {
     if (err) throw err;
     console.log(bouquet);

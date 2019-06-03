@@ -3,22 +3,29 @@ import styles from './styles.module.css';
 import mainphoto from '../../assets/img/all.jpg';
 import Post from '../../components/Post/post';
 
-var k = 1;
-var bouquets1 = [], bouquets2 = [], bouquets3 = [];
+var bouquets1 = [], bouquets2 = [], bouquets3 = [], bouquets4 = [];
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
       page: this.props.match.params.id,
-      bouquets: []
+      bouquets1: [],
+      bouquets2: [],
+      bouquets3: [],
+      bouquets4: []
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {    
+    var k = 1;
     fetch('/api/bouquets')
       .then(res => res.json())
-      .then(bouquets => this.setState({ bouquets }, () => {
+      .then(bouquets  => {
+        bouquets1 = []; 
+        bouquets2 = [];
+        bouquets3 = [];
+        bouquets4 = [];
         console.log('Successfull fetched...', bouquets);
         bouquets.map(b => {
           if (k === 1) {
@@ -31,11 +38,16 @@ class Main extends Component {
           }
           else if (k === 3) {
             bouquets3.push(<Post key={b.bname + b.id} img={b.bname} flower={b.bname} price={b.price}></Post>)
-            k = 1;
+            k++;
           }
-
-        })
-      }));
+          else if (k === 4) {
+            bouquets4.push(<Post key={b.bname + b.id} img={b.bname} flower={b.bname} price={b.price}></Post>)
+            k=1;
+          }
+          this.setState({ bouquets1, bouquets2, bouquets3, bouquets4 });
+          return b;
+        });
+      });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -56,13 +68,16 @@ class Main extends Component {
         </div>
         <div className={styles.Main}>
           <div className={styles.PhotoColumn}>
-            {bouquets1}
+            {this.state.bouquets1}
           </div>
           <div className={styles.PhotoColumn}>
-            {bouquets2}
+            {this.state.bouquets2}
           </div>
           <div className={styles.PhotoColumn}>
-            {bouquets3}
+            {this.state.bouquets3}
+          </div>
+          <div className={styles.PhotoColumn}>
+            {this.state.bouquets4}
           </div>
         </div>
       </div>

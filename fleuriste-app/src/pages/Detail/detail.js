@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import styles from './styles.module.css';
-import Photo from '../../assets/img/xxyy.jpg';
-import Photo1 from '../../assets/img/all.jpg';
-import Photo2 from '../../assets/img/main.jpg';
-import Photo3 from '../../assets/img/today.jpg';
 class Detail extends Component {
 
   constructor(props) {
@@ -17,9 +13,8 @@ class Detail extends Component {
   componentDidMount() {
     fetch('/api/bouquets')
       .then(res => res.json())
-      .then(bouquets => this.setState({ bouquet: bouquets.find(b => b.bname == this.props.match.params.flowerID) }, () => {
+      .then(bouquets => this.setState({ bouquet: bouquets.find(b => b.bname === this.props.match.params.flowerID) }, () => {
         console.log('Successfull fetched...', this.state.bouquet);
-
       }));
   }
 
@@ -43,6 +38,9 @@ class Detail extends Component {
           </div>
           <div className={styles.Thumb}>
             <img src={require('../../assets/buketi/' + this.props.match.params.flowerID + '3.jpg')} alt="flower" onClick={() => this.changeThumb('3.jpg')} />
+          </div>
+          <div className={styles.Thumb}>
+            <img src={require('../../assets/buketi/' + this.props.match.params.flowerID + '1.jpg')} alt="flower" onClick={() => this.changeThumb('1.jpg')} />
           </div>
 
         </div>
