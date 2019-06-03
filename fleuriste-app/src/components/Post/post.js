@@ -9,7 +9,7 @@ class Post extends Component {
         return (
             <div className={styles.Post}>
                 <div className={styles.container}>
-                    <img className={styles.image} alt="photoThumb" src={this.props.img} />
+                    <img className={styles.image} alt="photoThumb" src={require('../../assets/buketi/' + this.props.img + '1.jpg')} />
                     <div className={styles.middle}>
                         <Link to={"/buket/" + this.props.flower} className={styles.text}>KUPI</Link>
                     </div>
@@ -17,7 +17,7 @@ class Post extends Component {
                 </div>
                 <div className={styles.Price}>
                     <p>{this.props.flower}</p>
-                    <p>100kn</p>
+                    <p>{this.props.price} kn</p>
                 </div>
             </div>);
     }
