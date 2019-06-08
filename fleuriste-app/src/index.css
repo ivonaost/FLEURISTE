@@ -29,6 +29,10 @@ body{
     color: #642b08;
 }
 
+.fa-check{
+  padding: 10px;
+  color: #fc9c6b;
+}
 
 /***********  DROPDOWN **************/
 
@@ -79,4 +83,22 @@ body{
     display: block;
   }
 
-  /****************************************************************************/
+/****************************************************************************/
+
+
+/****** LOGGED IN USER *****/
+.LoggedForm {
+    display: none;
+}
+
+.Public {
+  display: none;
+}
+
+.Logged {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px 500px 50px;
+}
+/********************/

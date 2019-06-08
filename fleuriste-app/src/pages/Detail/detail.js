@@ -50,8 +50,18 @@ class Detail extends Component {
           <div className={styles.Description}>{this.state.bouquet.description}</div>
           <div className={styles.Size}>
             <div>Cijena: {this.state.bouquet.price}kn</div>
-            <button className={styles.AddBtn}>Dodaj u košaricu</button>
-          </div>
+            <form action="/addtocart" method="post">
+              <input type="hidden" name="bouquetName" value={this.state.bouquet.bname} />
+              <input type="hidden" name="bouquetPrice" value={this.state.bouquet.price} />
+              <button type="submit" className={styles.AddBtn}>Dodaj u košaricu</button>
+            </form>
+
+            <form action="/buyproduct" method="post">
+              <input type="hidden" name="bouquetName" value={this.state.bouquet.bname} />
+              <input type="hidden" name="bouquetPrice" value={this.state.bouquet.price} />
+              <button type="submit" className={styles.AddBtn}>Naruči</button>
+            </form>
+          </div>      
 
         </div>
       </div>

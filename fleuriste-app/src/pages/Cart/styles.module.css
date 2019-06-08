@@ -1,0 +1,49 @@
+.Title{
+    text-align: center;
+    margin-top: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.Background{
+    background-image: url('../../assets/img/cart1.jpg');
+    width: 100%;
+    height: 1000px;
+    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.Div{
+    padding-top: 2%;
+    margin: auto;
+    width: 20%;
+}
+
+.Bouquet{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid lightblue;
+    padding: 5px 0;
+}
+
+.Bouquet:hover{
+    background-color: lightblue;
+}
+
+.DeleteBtn{
+    background: none;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.DeleteBtn:hover{
+    cursor: pointer;
+    color: #fc9c6b;
+    font-size: 20px;
+    padding: 7px;
+}
+

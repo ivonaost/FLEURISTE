@@ -4,6 +4,21 @@ import styles from './styles.module.css';
 import Logo from './logo.png';
 
 class Header extends Component {
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      cartNumber: "0"
+    }
+  }
+
+  componentDidMount() {
+    fetch('/cartnumber')
+      .then(res => res.json())
+      .then(obj => this.setState({ cartNumber: obj.cartNumber})
+      );
+  }
+
   render() {
 
     return (
@@ -23,8 +38,8 @@ class Header extends Component {
           </div>|
           <Link className={styles.HeaderLink} to="/slozisam">Složi sam</Link>|
           <Link className={styles.HeaderLink} to="/aboutus">O nama</Link>|
-          <Link className={styles.HeaderLink} to="/"><i className="fas fa-user-circle"></i></Link>|
-          <Link className={styles.HeaderLink} to="/"><i className="fas fa-shopping-cart"></i></Link>
+          <Link className={styles.HeaderLink} to="/profile"><i className="fas fa-user-circle"></i></Link>|
+          <Link className={styles.HeaderLink} to="/kosarica"><i className="fas fa-shopping-cart"></i> {this.state.cartNumber}</Link>
         </div>
       </div>
     );
