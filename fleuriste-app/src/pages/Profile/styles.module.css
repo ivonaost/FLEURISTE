@@ -1,10 +1,17 @@
-.Title{
-    margin-top: 80px;
+.ProfileBackground{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: rgb(211,211,211);
+}
+
+.Title{    
     text-align: center;
+    text-transform: uppercase;
 }
 
 .LogOutBtn{
-    background-color: white;
+    background-color: rgb(190, 35, 35);
+    color: white;
     border: none;
     font-weight: bold;
     padding: 10px 50px;
@@ -15,7 +22,42 @@
 .LogOutBtn:hover{
     transform: scale(1.2);
     cursor: pointer;
-    border: 2px solid #fc9c6b;
-    color: #fc9c6b;
+    border: 2px solid white;
     margin: -2px;
+}
+
+.Bouquet{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid lightblue;
+    padding: 5px 0;
+    width:80%;
+    margin: auto;
+}
+
+.Bouquet:hover{
+    background-color: lightblue;
+}
+
+.Body h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.Body{
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 50px;    
+    border: 2px solid white;
+}
+
+.Container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 80%;
 }

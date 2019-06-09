@@ -51,7 +51,7 @@ class Custom extends Component {
                                 type="checkbox" onChange={this.handleFlowerNumber.bind(this)} />
                             {option}
                         </b>
-                        <span className={styles.inputCounterSpan}> <input name="bouquetAmount" type="number" defaultValue="0" onChange={this.handlePrice.bind(this)}></input></span>
+                        <span className={styles.inputCounterSpan}> <input type="number" defaultValue="0" onChange={this.handlePrice.bind(this)}></input></span>
                     </div>
                 )
             }
@@ -176,19 +176,19 @@ class Custom extends Component {
                             <option value="many" >Raznovrsno</option>
                         </select>
 
-                        <form action="/buyproduct" method="post" id="optionsForm" className={styles.OptionsForm}>
+                        <form action="/addtocart" method="post" id="optionsForm" className={styles.OptionsForm}>
                             <div className={styles.OptionsList}>
                                 {this.state.optionList}
                             </div>
                             <div key="oneCountKey" id="oneFlowerCount" className={styles.oneFlowerCount}>
-                                Količina: <input name="bouquetAmount" type="number" defaultValue="0" onChange={this.handlePrice.bind(this)}></input>
+                                Količina: <input type="number" defaultValue="0" onChange={this.handlePrice.bind(this)}></input>
                             </div>
                             <div className={styles.Price}>
                                 Cijena: {this.state.price} kn
                                 <input type="hidden" name="bouquetPrice" value={this.state.price} />
                             </div>                        
-                            <input type="hidden" name="bouquetName" value="Custom" />
-                            <button type="submit" className={styles.ShopNowBtn}>NARUČI</button>
+                            <input type="hidden" name="bouquetName" value="custom" />
+                            <button type="submit" className={styles.ShopNowBtn}>DODAJ U KOŠARICU</button>
                         </form>
                     </div>
                 </div>

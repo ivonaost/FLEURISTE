@@ -40,9 +40,8 @@ db.connect((err) => {
 // dohvacanje vrsta cvijeca iz baze
 app.get('/api/flowers', (req, res) => {
   let sql = 'SELECT * FROM flowers';
-  let query = db.query(sql, (err, flowers) => {
+  db.query(sql, (err, flowers) => {
     if (err) throw err;
-    console.log(flowers);
     res.json(flowers);
   });
 });
@@ -50,10 +49,20 @@ app.get('/api/flowers', (req, res) => {
 // dohvacanje buketa iz baze
 app.get('/api/bouquets', (req, res) => {
   let sql = 'SELECT * FROM bouquet ORDER BY idbouquet DESC';
-  let query = db.query(sql, (err, bouquet) => {
+  db.query(sql, (err, bouquet) => {
     if (err) throw err;
     console.log(bouquet);
     res.json(bouquet);
+  });
+});
+
+// dohvacanje buketa iz baze
+app.get('/api/myorders', (req, res) => {
+  let sql = " SELECT * FROM orders WHERE user = '"+req.session.uniqueID+"' ";
+  db.query(sql, (err, orders) => {
+    if (err) throw err;
+    console.log(orders);
+    res.json(orders);
   });
 });
 
@@ -61,7 +70,6 @@ app.get('/api/bouquets', (req, res) => {
 // prijava korisnika
 app.post('/login', function(req, res) {
   var message = '';
-  var sess = req.session;
 
   if(req.method == "POST"){
      var post  = req.body;
@@ -99,9 +107,9 @@ app.get('/user',(req,res)=>{
 
 app.get('/finduser',(req,res)=>{
   console.log("sesija: "+req.session.user)
+
   if(req.session.user)
     {
-      console.log("im in");
       res.json(req.session.user);
     }
   else
@@ -111,102 +119,87 @@ app.get('/finduser',(req,res)=>{
 // odjava korisnika
 app.post('/logout',function(req,res){
   req.session.destroy();
-  res.redirect('/');
+  res.redirect('/profile');
 });
 
-
-//dodaj u kosaricu 
+// Globalne varijable: 
+//  - cookieCounter: brojac cookija
+//  - cartCounter: brojac buketa u kosarici
+//  - bouquets: niz buketa u kosarici
 var cookieCounter = 0;
+var cartCounter = 0;
+var bouquets = [];
+
+// Dodaj u kosaricu 
 app.post('/addtocart',function(req,res){
   var bouquetName = 'bouquetName'+cookieCounter;
   var bouquetPrice = 'bouquetPrice'+cookieCounter;
   cookieCounter++;
+  cartCounter++;
   if(req.body.bouquetName && req.body.bouquetPrice){
      res.cookie(bouquetName, req.body.bouquetName);
      res.cookie(bouquetPrice, req.body.bouquetPrice);
      console.log("Buket "+req.body.bouquetName+". Cijena: "+req.body.bouquetPrice);    
-     res.redirect('/buket/'+req.body.bouquetName);             
+     bouquets.push({ 
+      "name" :bouquetName,
+      "value": req.body.bouquetName,
+      "priceTag": bouquetPrice,
+      "price": req.body.bouquetPrice });
+     res.redirect('/kosarica');             
   } 
 });
 
-//promijeni broj kosarice
+// Promijeni broj buketa u kosarici
 app.get('/cartnumber',function(req,res){
-    res.json({'cartNumber': cookieCounter});
+    res.json({'cartNumber': cartCounter});
 });
 
 
-//naruci proizvod
+// Naruci proizvod
 app.post('/buyproduct',function(req,res){
   if(req.body.bouquetName && req.body.bouquetPrice){
+
      res.cookie('bouquetName', req.body.bouquetName);
      res.cookie('bouquetPrice', req.body.bouquetPrice);
+
      console.log("Buket "+req.body.bouquetName+". Cijena: "+req.body.bouquetPrice);    
+
      res.redirect('http://localhost:3000/profile');             
   } 
 });
 
-//izlistaj proizvode u kosarici
-var cookies = [];
-var bouquets = [];
+// Izlistaj proizvode u kosarici
 app.get('/shoppingcart',function(req,res){
-
-  cookies = [];
-  var i=0;
-
-  for(cookie in req.cookies){  
-    console.log(Object.keys(req.cookies)[i]+" : "+Object.values(req.cookies)[i])
-    cookies.push({ "name" : Object.keys(req.cookies)[i], "value": Object.values(req.cookies)[i]} )
-    i++;  
-  }
-
-  i=0;
-  bouquets = cookies.filter(c => {
-    if(c.name=="bouquetName"+i)
-      {
-        i++;
-        return c;
-      }
-  });
-  cookieCounter = 0;
-
-  console.log(bouquets);
   res.json(bouquets);
 });
 
-// naruci buket/e
+// Naruci buket/e
 app.post('/order',function(req,res){
-  var price = 0;
-  var i=0;
-  
-  cookies.filter(c => {
-    if(c.name=="bouquetPrice"+i)
-    {
-      price += parseInt(c.value);
-      res.clearCookie(c.name);
 
-      bouquets.filter(b => {
-        if(b.name ==="bouquetName"+i )
-          {
-            var sql="INSERT INTO orders (user,title,price) VALUES ('"+req.session.uniqueID+"', '"+b.value+"','"+c.value+"' )";                      
-            db.query(sql, function (err, result) {
-                if (err) throw err;
-                console.log(b.name);
-              });
-          }
-          return b;
-      });
-
-      i++;
-      return c;
-    }
-    else if(c.name=="bouquetName"+i){
-      res.clearCookie(c.name);
-      return c;
-    }
+  bouquets.map( bouquet => {
+    var sql="INSERT INTO orders (user,title,price) VALUES ('"+req.session.uniqueID+"', '"+bouquet.value+"','"+bouquet.price+"' )";                      
+    db.query(sql, function (err, result) {
+      if (err) throw err;    
+      console.log("Uspjesno dodano: " + bouquet);
+    });
+    return 1;
   });
 
-  console.log(price);
-  res.redirect('/');
+  cookieCounter = 0;
+  cartCounter = 0;
+  bouquets = [];
+  res.redirect('/profile');
+})
+
+// Izbrisi narudzbu
+app.post('/deleteorder',function(req,res){
+
+  var newBouquetsList = [];
+  newBouquetsList = bouquets.filter( bouquet => bouquet.name != req.body.deleteCookie );
+  bouquets = newBouquetsList;
+  cartCounter--;
+
+  res.redirect('/kosarica');
 })
 
 const port = 5000;

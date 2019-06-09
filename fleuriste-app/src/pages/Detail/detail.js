@@ -55,12 +55,6 @@ class Detail extends Component {
               <input type="hidden" name="bouquetPrice" value={this.state.bouquet.price} />
               <button type="submit" className={styles.AddBtn}>Dodaj u košaricu</button>
             </form>
-
-            <form action="/buyproduct" method="post">
-              <input type="hidden" name="bouquetName" value={this.state.bouquet.bname} />
-              <input type="hidden" name="bouquetPrice" value={this.state.bouquet.price} />
-              <button type="submit" className={styles.AddBtn}>Naruči</button>
-            </form>
           </div>      
 
         </div>

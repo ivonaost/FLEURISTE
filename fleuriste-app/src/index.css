@@ -6,6 +6,12 @@ body{
     font-size: 20px;
 }
 
+@media only screen and (max-width: 500px) {
+  body{
+    display: none;
+  }
+}
+
 .fa-heart{
     color: rgb(214, 0, 0);
 }
@@ -33,6 +39,7 @@ body{
   padding: 10px;
   color: #fc9c6b;
 }
+
 
 /***********  DROPDOWN **************/
 
@@ -96,9 +103,25 @@ body{
 }
 
 .Logged {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px 500px 50px;
+  display: block;
 }
+
+.LoggedAlert{
+  display: none;
+  
+}
+
+.PublicAlert{
+  text-align: center;
+}
+
+.PublicOrder {
+  display: none;
+}
+
+.LoggedOrder{
+  display: flex;
+  justify-content: center;
+}
+
 /********************/

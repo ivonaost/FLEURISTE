@@ -16,7 +16,8 @@
 
 .Div{
     padding-top: 2%;
-    margin: auto;
+    margin: auto;    
+    margin-bottom: 40px;
     width: 20%;
 }
 
@@ -47,3 +48,27 @@
     padding: 7px;
 }
 
+.LogInLink{
+    color: #fc9c6b;
+}
+
+.LogInLink:hover{
+    color: lightblue;
+}
+
+.OrderBtn{
+    background-color: #fc9c6b;
+    color:white;
+    border: none;
+    font-weight: bold;
+    padding: 10px 50px;
+    transition: transform .2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 40px auto;
+}
+
+.OrderBtn:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    border: 2px solid white;
+}

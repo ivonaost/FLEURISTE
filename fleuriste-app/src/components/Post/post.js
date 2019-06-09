@@ -11,7 +11,7 @@ class Post extends Component {
                 <div className={styles.container}>
                     <img className={styles.image} alt="photoThumb" src={require('../../assets/buketi/' + this.props.img + '1.jpg')} />
                     <div className={styles.middle}>
-                        <Link to={"/buket/" + this.props.flower} className={styles.text}>KUPI</Link>
+                        <Link to={"/buket/" + this.props.flower} className={styles.text}>DETALJI</Link>
                     </div>
 
                 </div>
