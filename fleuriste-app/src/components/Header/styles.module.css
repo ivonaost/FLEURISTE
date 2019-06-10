@@ -6,15 +6,6 @@
     background-color: white;
 }
 
-@media only screen and (max-width: 750px) {
-    .Header {
-        display: block;
-        padding: 20px;
-    }
-    .headerLogo{
-        margin-bottom: 20px;
-    }
-}
 
 .headerLogo img{
     width: 250px;
@@ -47,3 +38,12 @@
     
 }
 
+
+@media only screen and (max-width: 800px) {
+    .Header {
+        display: block;
+    }
+    .headerLogo{
+        margin-bottom: 20px;
+    }
+}

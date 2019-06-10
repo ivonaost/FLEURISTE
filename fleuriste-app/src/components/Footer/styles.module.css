@@ -1,5 +1,6 @@
 .Footer{
     background-color: #fc9c6b; 
+    width: 100%;
 }
 
 .Info{    
@@ -32,4 +33,10 @@
     margin: 0;
     padding: 20px 0;
 
+}
+
+@media only screen and (max-width: 1170px){
+    .Info div{
+       width: auto;
+    }
 }

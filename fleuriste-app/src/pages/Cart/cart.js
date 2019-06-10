@@ -57,15 +57,17 @@ class Cart extends Component {
         return (
             <div className={styles.Background}>
                 <h1 className={styles.Title}>Proizvodi u košarici:</h1>
-                <form action="/order" method="post" className={styles.Div}>
-                    <div>
-                        {bouquetsList}
-                    </div>
-                    <div className={this.state.class+"Order"}>
-                        <button className={styles.OrderBtn} type="submit"> NARUČI </button>
-                    </div>                    
-                </form>
-                <div className={this.state.class+"Alert"}>Molimo <Link className={styles.LogInLink} to='/profile'>prijavite se</Link> kako bi obavili narudžbu!</div>
+                <div className={styles.Responzive}>
+                    <form action="/order" method="post" className={styles.Div}>
+                        <div>
+                            {bouquetsList}
+                        </div>
+                        <div className={this.state.class+"Order"}>
+                            <button className={styles.OrderBtn} type="submit"> NARUČI </button>
+                        </div>                    
+                    </form>
+                    <div className={this.state.class+"Alert"}>Molimo <Link className={styles.LogInLink} to='/profile'>prijavite se</Link> kako bi obavili narudžbu!</div>
+                </div>
             </div>
 
         );

@@ -6,11 +6,6 @@ body{
     font-size: 20px;
 }
 
-@media only screen and (max-width: 500px) {
-  body{
-    display: none;
-  }
-}
 
 .fa-heart{
     color: rgb(214, 0, 0);
@@ -125,3 +120,17 @@ body{
 }
 
 /********************/
+
+
+
+@media only screen and (max-width: 330px) {
+  body{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  body{
+    width: 100%;
+  }
+}

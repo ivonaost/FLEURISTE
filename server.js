@@ -58,7 +58,7 @@ app.get('/api/bouquets', (req, res) => {
 
 // dohvacanje buketa iz baze
 app.get('/api/myorders', (req, res) => {
-  let sql = " SELECT * FROM orders WHERE user = '"+req.session.uniqueID+"' ";
+  let sql = " SELECT * FROM orders WHERE user = '"+req.session.uniqueID+"' ORDER BY idorders DESC";
   db.query(sql, (err, orders) => {
     if (err) throw err;
     console.log(orders);

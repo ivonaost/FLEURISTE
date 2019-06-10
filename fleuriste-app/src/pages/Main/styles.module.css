@@ -39,3 +39,16 @@
     flex: 23%;
     padding: 0 4px;
   }
+
+@media only screen and (max-width: 850px) {
+    .MainPhoto img{
+        display: none;
+    }
+
+    .MainPhoto{
+        background: url('../../assets/img/all.jpg');
+        background-size: cover;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+}
