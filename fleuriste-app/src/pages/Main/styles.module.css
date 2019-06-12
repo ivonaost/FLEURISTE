@@ -40,6 +40,14 @@
     padding: 0 4px;
   }
 
+
+@media only screen and (max-width: 1230px) {
+    .PhotoColumn {
+        flex: 46%;
+        padding: 0 4px;
+      }
+}
+
 @media only screen and (max-width: 850px) {
     .MainPhoto img{
         display: none;
@@ -50,5 +58,11 @@
         background-size: cover;
         background-size: 100%;
         background-repeat: no-repeat;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .Main{
+        display: block;
     }
 }

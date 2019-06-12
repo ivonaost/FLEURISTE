@@ -184,5 +184,15 @@ a{
     }
 }
 
+@media only screen and (max-width: 480px) {
+    .MainBlock .MinnieBlock button{
+        font-size: 14px;
+    }
+
+    .MainBlock button{
+        left: 10%;
+        width: 80%;
+    }
+}
 
 
