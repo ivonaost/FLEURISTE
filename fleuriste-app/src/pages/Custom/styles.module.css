@@ -33,7 +33,7 @@
 .cardForm select{
         width: 20%;
         margin: 40px;
-    }
+}
 
 .OptionsForm {
     display: none;
@@ -122,4 +122,28 @@
 
 .Price{
     margin: 12px auto;
+}
+
+
+@media only screen and (max-width: 1400px) {
+    .cardForm select{
+        width: 35%;
+        margin: 40px;
+    }    
+
+    .OptionsList{
+        width: 35%;
+    }
+}
+
+
+@media only screen and (max-width: 850px) {
+    .cardForm select{
+        width: 50%;
+        margin: 40px;
+    }    
+
+    .OptionsList{
+        width: 50%;
+    }
 }
